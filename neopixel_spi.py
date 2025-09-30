@@ -20,7 +20,7 @@ def color_to_spi_bytes(r,g,b):
         spi_bytes.append(val)
     return spi_bytes
 
-spi = SPI(0, baudrate=2400000, polarity=0, phase=0, bits=8, firstbit=SPI.MSB, sck=Pin(18), mosi=Pin(19))
+spi = SPI(0, baudrate=2400000, polarity=0, phase=0, bits=8, firstbit=SPI.MSB, sck=Pin(3), mosi=Pin(4))
 
 while True:
     spi.write(color_to_spi_bytes(16,0,0))  # Red
