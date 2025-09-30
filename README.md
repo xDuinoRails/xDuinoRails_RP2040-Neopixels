@@ -4,7 +4,7 @@ This repository should show as many ways as possible to control Neopixels with a
 
 | Method | Description | Example Filename | Wokwi |
 | :--- | :--- | :--- | :--- |
-| PIO | Hardware-timed waveforms via PIO | neopixel_pio.py | <tbd> |
+| PIO | Hardware-timed waveforms via PIO | neopixel_pio.py | [Wokwi PIO](https://wokwi.com/projects/443545796878931969) |
 | DMA + PIO | PIO fed by DMA (C/C++ only, not in MicroPython) | neopixel_pio_dma.py (similar) | <tbd> |
 | Bit-Banging | Manual timing via GPIO and delays | neopixel_bitbang.py | <tbd> |
 | SPI | Encode WS2812 bits as SPI bytes | neopixel_spi.py | <tbd> |
