@@ -8,9 +8,9 @@ Hier ist ein kompaktes **Cheatsheet für die PIO (Programmable I/O) des RP2040**
   - **8 State Machines (SM)** in 2 PIO-Blöcken (RP2350 12 in 3)
   - **Instruktionsspeicher** (Je 32 Befehle pro PIO-Block, 64 total)
   - **RX-/TX-FIFOs** entweder 2x4 bytes bidirections oder 8 bytes unidirectional
-  - **Pins** <tbd>
-  - **Interrupts** <tbd>
-  - **DMA-Unterstützung** <tbd>
+  - **Pins** tbd
+  - **Interrupts** tbd
+  - **DMA-Unterstützung** tbd
 
 ---
 
