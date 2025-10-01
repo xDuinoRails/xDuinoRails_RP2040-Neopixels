@@ -1,7 +1,7 @@
 Hier ist ein kompaktes **Cheatsheet für die PIO (Programmable I/O) des RP2040**, das dir einen schnellen Überblick über Aufbau, Befehle und typische Anwendungen gibt:
 
-| Übersicht RP2040 | PIO-Block | PIO-Statem-Machine |
-|------------------|-----------|--------------------|
+| Übersicht RP2040 | PIO-Block | PIO-State-Machine |
+|------------------|-----------|-------------------|
 | <img width="400" alt="Gesamtübersicht RP2040"  src="https://github.com/user-attachments/assets/740ab1d1-d4d5-47cf-bd1c-ce9f30acb4ff" /> | <img width="400" alt="Single PIO-Block" src="https://github.com/user-attachments/assets/fd701ba8-e91b-468b-8791-e6492185fd10" /> | <img width="400" alt="Single State Maching" src="https://github.com/user-attachments/assets/9a53acbd-61de-4d7b-b356-aead80e12e9b" /> |
 
 ---
