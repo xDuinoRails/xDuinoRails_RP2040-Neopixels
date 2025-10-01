@@ -48,7 +48,7 @@ Wenn du möchtest, kann ich diese Tabelle auch als **PDF oder Markdown-Datei** e
 
 ## 🔁 **Timing & Steuerung**
 - Jeder Befehl dauert **1 Takt** (Standard)
-- Mit `delay` kann man zusätzliche Takte hinzufügen:
+- Mit `delay` kann man _**zusätzliche**_ Takte hinzufügen:
   ```asm
   set pins, 1 [5]  ; Setzt Pin und wartet 5 Takte
   ```
