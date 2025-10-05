@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2021 Scott Shawcroft, written for Adafruit Industries
+#                         2025 Olivier Chatelain, heavily modified for xDuinoRails
 #
 # SPDX-License-Identifier: MIT
 
@@ -41,18 +42,18 @@ sm = rp2pio.StateMachine(
 print("real frequency", sm.frequency)
 
 while True:
-    pixel_buffer = array.array('L', [0xF00000 << 8, 0xF00000 << 8, 0xF00000 << 8]) 
+    # pixel_buffer = array.array('L', [0xF00000 << 8, 0xF00000 << 8, 0xF00000 << 8]) 
+    pixel_buffer = array.array('L', [0xF00000 << 8] * 2 + [0x00F000 << 8] * 3 + [0x0000F0 << 8] * 4 )
     # sm.write(pixel_buffer)                 # Send data using one CPU
     sm.background_write(once=pixel_buffer) # Send data using non-blocking DMA
-    time.sleep(1)
+    time.sleep(.3)
 
-    pixel_buffer = array.array('L', [0x00F000 << 8, 0x000000 << 8, 0x00F000 << 8])
+    pixel_buffer = array.array('L', [0x00F000 << 8] * 3 + [0x0000F0 << 8] * 4 + [0xF00000 << 8] * 2)
     # sm.write(pixel_buffer)                 # Send data using one CPU
     sm.background_write(once=pixel_buffer) # Send data using non-blocking DMA
-    time.sleep(.2)
+    time.sleep(.4)
 
-    pixel_buffer = array.array('L', [0x0000F0 << 8])
+    pixel_buffer = array.array('L', [0x0000F0 << 8] * 4 + [0xF00000 << 8] * 2 + [0x00F000 << 8] * 3)
     # sm.write(pixel_buffer)                 # Send data using one CPU
     sm.background_write(once=pixel_buffer) # Send data using non-blocking DMA
-    time.sleep(.2)
-
+    time.sleep(.5)
