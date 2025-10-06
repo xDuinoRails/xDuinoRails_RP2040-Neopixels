@@ -20,9 +20,9 @@ import adafruit_pioasm
 program = """
 .program ws2812
 loop:
-   set pins 1  [2]    ; 350ns - Drive 'HIGH'
-   out pins 1  [4]    ; 550ns - Drive data
-   set pins 0  [2]    ; 350ns - Drive 'LOW'
+   set pins 1      ; 350ns - Drive 'HIGH'
+   out pins 1      ; 550ns - Drive data
+   set pins 0  [2] ; 350ns - Drive 'LOW'
 """
 
 assembled = adafruit_pioasm.assemble(program)
@@ -32,7 +32,7 @@ NUM_PIXELS = 20
 
 sm = rp2pio.StateMachine(
       assembled
-    , frequency       = 8_000_000  # Go for 50ns step size
+    , frequency       = 3_200_000  # Go for 250ns step size
     , first_out_pin   = NEOPIXEL
     , first_set_pin   = NEOPIXEL
     , out_shift_right = False
@@ -42,7 +42,7 @@ sm = rp2pio.StateMachine(
 print("real frequency", sm.frequency)
 
 while True:
-    # pixel_buffer = array.array('L', [0xF00000 << 8, 0xF00000 << 8, 0xF00000 << 8]) 
+    # pixel_buffer = array.array('L', [0xF00000 << 8, 0xF00000 << 8, 0xF00000 << 8])
     pixel_buffer = array.array('L', [0xF00000 << 8] * 2 + [0x00F000 << 8] * 3 + [0x0000F0 << 8] * 4 )
     # sm.write(pixel_buffer)                 # Send data using one CPU
     sm.background_write(once=pixel_buffer) # Send data using non-blocking DMA
